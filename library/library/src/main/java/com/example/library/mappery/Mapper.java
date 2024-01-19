@@ -38,8 +38,7 @@ public class Mapper {
     }
 
     public Customer convertToEntity(CreateCustomer createCustomer) {
-        return modelMapper.map(createCustomer, Customer.class);
-    }
+        return modelMapper.map(createCustomer, Customer.class);}
 
     // Mapping for Loan
     public LoanDto convertToDto(Loan loan) {
@@ -48,5 +47,14 @@ public class Mapper {
 
     public Loan convertToEntity(CreateLoan createLoan) {
         return modelMapper.map(createLoan, Loan.class);
+    }
+
+    // Mapping for Review
+    public ReviewDto convertToDto(Review review) {
+        return modelMapper.map(Review, ReviewDto.class);
+    }
+
+    public Review convertToEntity(CreateReview createReview) {
+        return modelMapper.map(createReview, Review.class);
     }
 }
