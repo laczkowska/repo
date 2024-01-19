@@ -2,7 +2,7 @@ package com.example.library.data;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CustomerRepository extends JpaRepository<Customer, Long> {
+public interface Repository extends JpaRepository<Customer, Long> {
 }
 
 public class StarRating {
@@ -22,18 +22,18 @@ public class StarRating {
 }
 
 public class Book {
-    private int bookId;
+    @Id
+    @GeneratedValue
+    private Long id;
     private String title;
-    private String author;
-    // Dodatkowe informacje o książce
+    private String genre;
+    @ManyToOne
+    private Author author;
+    private boolean available;
 
-    // Konstruktory, gettery i settery
-
-    public Book(int bookId, String title, String author) {
-        this.bookId = bookId;
+    public Book(String title, String genre, Author author) {
         this.title = title;
+        this.genre = genre;
         this.author = author;
+        this.available = true;
     }
-
-    // Dodatkowe metody, jeśli są potrzebne
-}
