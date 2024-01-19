@@ -12,12 +12,12 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public class Library {  // Replaced: No equivalent in student-themed app
+public class Library {
     @Id
     @GeneratedValue
     private UUID id;
-    private String name;  // Replaced: name
-    private String location;  // Replaced: No equivalent in student-themed app
+    private String name;
+    private String location;
 
     @OneToMany(mappedBy = "library", cascade = CascadeType.ALL)
     private Set<Book> books = new HashSet<>();

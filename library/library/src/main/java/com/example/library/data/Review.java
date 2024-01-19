@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface Repository extends JpaRepository<Customer, Long> {
 }
 
-public class StarRating {
+public class Review {
     private int ratingId;
     private int stars;
     private Book associatedBook;
