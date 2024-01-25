@@ -13,8 +13,11 @@ import java.util.Map;
 
 @Component
 public class DataInitializer implements CommandLineRunner {
-    @Autowired
-    private BookRepository bookRepository;
+    private final BookRepository bookRepository;
+
+    public DataInitializer(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
 
     @Override
     public void run(String... args) throws Exception {
